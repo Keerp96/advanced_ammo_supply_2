@@ -19,15 +19,12 @@ Description =
     "- **More Ammo Support:**\n"\
     "  - Added storage for EMP, Nuke, H.E. missile parts, and mines.\n"\
     "  - Works with modular missiles.\n"\
-    "- **More Cannon Support:**\n"\
+    "- **More Cannons Mod Support:**\n"\
     "  - Compatible with EMP and NUKE cannons.\n"\
-    "  - Fixed missing type categories.\n"\
     "- **Star Wars Mod Support:**\n"\
     "  - Works with SW missile launchers (mini cluster, concussion, intruder, hex, etc.).\n"\
-    "  - Proper ammo storage and reload handling.\n"\
     "- **More Mod Compatibility:**\n"\
     "  - Supports Galactic Allegiance Missile Silos, Standalone Missile Silos, Jani’s Shipyard, and Advanced Missile Launcher.\n"\
-    "  - Overrides ensure correct ammo distribution.\n"\
     "- **Ammo Proxy Movement:**\n"\
     "  - Ammo can now transfer **left, right, or forward**.\n"\
     "- **Stronger Storage:**\n"\
