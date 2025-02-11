@@ -13,9 +13,28 @@ Author = "Bwilliamson55"
 
 Logo = "logo.png"
 
-Description =
-	"FORKED version of aephiex.advanced_ammo_storage_and_supply - Adds an Ammo Storage that is armored and more durable. It also transfers its contents to the cannon or Ammo Storage in front of it. It costs more than storage bays and it does not offer roof access.\n\n"\
-	"There are also counterparts for H.E. missile parts, E.M.P. missile parts, nuclear missile parts, and mine parts."
+Description = 
+    "FORKED version of aephiex.advanced_ammo_storage_and_supply\n\n"\
+    "### What's New\n"\
+    "- **More Ammo Support:**\n"\
+    "  - Added storage for EMP, Nuke, H.E. missile parts, and mines.\n"\
+    "  - Works with modular missiles.\n"\
+    "- **More Cannon Support:**\n"\
+    "  - Compatible with EMP and NUKE cannons.\n"\
+    "  - Fixed missing type categories.\n"\
+    "- **Star Wars Mod Support:**\n"\
+    "  - Works with SW missile launchers (mini cluster, concussion, intruder, hex, etc.).\n"\
+    "  - Proper ammo storage and reload handling.\n"\
+    "- **More Mod Compatibility:**\n"\
+    "  - Supports Galactic Allegiance Missile Silos, Standalone Missile Silos, Jani’s Shipyard, and Advanced Missile Launcher.\n"\
+    "  - Overrides ensure correct ammo distribution.\n"\
+    "- **Ammo Proxy Movement:**\n"\
+    "  - Ammo can now transfer **left, right, or forward**.\n"\
+    "- **Stronger Storage:**\n"\
+    "  - Armored storage bays for better durability.\n"\
+    "  - No roof access to keep things balanced.\n\n"\
+    "This is a fork and update to the original mod by aephiex. The original mod is no longer maintained. Github repo is at https://github.com/Bwilliamson55/advanced_ammo_supply_2"
+
 
 StringsFolder = "strings"
 
@@ -47,10 +66,10 @@ Actions
 	// ####################################################################################################
 	// # Support of More Cannons EMP and NUKE cannons
 	// ####################################################################################################
-	// H:\SteamLibrary\steamapps\workshop\content\799600\3052680147\2_420mm\2_420mm.rules (Emp)
-	// H:\SteamLibrary\steamapps\workshop\content\799600\3052680147\2_420mm_b\2_420mm_b.rules (Nuke)
-	// H:\SteamLibrary\steamapps\workshop\content\799600\3052680147\2_420mm_b\bullet_nuke\bullet_nuke.rules
-	// H:\SteamLibrary\steamapps\workshop\content\799600\3052680147\2_420mm\bullet_emp\bullet_emp.rules
+	// \SteamLibrary\steamapps\workshop\content\799600\3052680147\2_420mm\2_420mm.rules (Emp)
+	// \SteamLibrary\steamapps\workshop\content\799600\3052680147\2_420mm_b\2_420mm_b.rules (Nuke)
+	// \SteamLibrary\steamapps\workshop\content\799600\3052680147\2_420mm_b\bullet_nuke\bullet_nuke.rules
+	// \SteamLibrary\steamapps\workshop\content\799600\3052680147\2_420mm\bullet_emp\bullet_emp.rules
 
 	// Add proper type categories to cannon parts (uses_emps and uses_nukes)
 	{
@@ -108,17 +127,17 @@ Actions
 	// ####################################################################################################
 	// # Support of SW Missile Launcher
 	// ####################################################################################################
-	// H:\SteamLibrary\steamapps\workshop\content\799600\3119349707\ships\terran\weapons\missile_launchers\missile_launcher_small\missile_launcher_small.rules
-	// H:\SteamLibrary\steamapps\workshop\content\799600\3119349707\ships\terran\weapons\missile_launchers\missile_launcher_small\mini_cluster\missile_launcher_mini_cluster.rules - HE
-	// H:\SteamLibrary\steamapps\workshop\content\799600\3119349707\ships\terran\weapons\missile_launchers\missile_launcher_small\concussion\missile_launcher_concussion.rules - HE
-	// H:\SteamLibrary\steamapps\workshop\content\799600\3119349707\ships\terran\weapons\missile_launchers\missile_launcher_small\intruder\missile_launcher_intruder.rules - EMP
-	// H:\SteamLibrary\steamapps\workshop\content\799600\3119349707\ships\terran\weapons\missile_launchers\missile_launcher_small\hex\missile_launcher_hex.rules - Nuke
+	// \SteamLibrary\steamapps\workshop\content\799600\3119349707\ships\terran\weapons\missile_launchers\missile_launcher_small\missile_launcher_small.rules
+	// \SteamLibrary\steamapps\workshop\content\799600\3119349707\ships\terran\weapons\missile_launchers\missile_launcher_small\mini_cluster\missile_launcher_mini_cluster.rules - HE
+	// \SteamLibrary\steamapps\workshop\content\799600\3119349707\ships\terran\weapons\missile_launchers\missile_launcher_small\concussion\missile_launcher_concussion.rules - HE
+	// \SteamLibrary\steamapps\workshop\content\799600\3119349707\ships\terran\weapons\missile_launchers\missile_launcher_small\intruder\missile_launcher_intruder.rules - EMP
+	// \SteamLibrary\steamapps\workshop\content\799600\3119349707\ships\terran\weapons\missile_launchers\missile_launcher_small\hex\missile_launcher_hex.rules - Nuke
 	// ---
-	// H:\SteamLibrary\steamapps\workshop\content\799600\3119349707\ships\terran\weapons\missile_launchers\missile_launcher_medium\missile_launcher.rules
-	// H:\SteamLibrary\steamapps\workshop\content\799600\3119349707\ships\terran\weapons\missile_launchers\missile_launcher_medium\intruder\missile_launcher_intruder.rules
-	// H:\SteamLibrary\steamapps\workshop\content\799600\3119349707\ships\terran\weapons\missile_launchers\missile_launcher_medium\hex\missile_launcher_hex.rules
-	// H:\SteamLibrary\steamapps\workshop\content\799600\3119349707\ships\terran\weapons\missile_launchers\missile_launcher_medium\concussion\missile_launcher_concussion.rules
-	// H:\SteamLibrary\steamapps\workshop\content\799600\3119349707\ships\terran\weapons\missile_launchers\missile_launcher_medium\cluster\missile_launcher_cluster.rules
+	// \SteamLibrary\steamapps\workshop\content\799600\3119349707\ships\terran\weapons\missile_launchers\missile_launcher_medium\missile_launcher.rules
+	// \SteamLibrary\steamapps\workshop\content\799600\3119349707\ships\terran\weapons\missile_launchers\missile_launcher_medium\intruder\missile_launcher_intruder.rules
+	// \SteamLibrary\steamapps\workshop\content\799600\3119349707\ships\terran\weapons\missile_launchers\missile_launcher_medium\hex\missile_launcher_hex.rules
+	// \SteamLibrary\steamapps\workshop\content\799600\3119349707\ships\terran\weapons\missile_launchers\missile_launcher_medium\concussion\missile_launcher_concussion.rules
+	// \SteamLibrary\steamapps\workshop\content\799600\3119349707\ships\terran\weapons\missile_launchers\missile_launcher_medium\cluster\missile_launcher_cluster.rules
 	
 	// Add proper type categories to SW parts 
 	{
