@@ -1,0 +1,25 @@
+__Name = "English"
+__DebugOnly = false
+
+Parts
+{
+	AephiexStorageAmmo = "Ammo Storage"
+	AephiexStorageAmmoIcon = &AephiexStorageAmmo
+	AephiexStorageAmmoDesc = "A designated ammo storage that is armored and more durable. It also transfers its contents to the cannon or Ammo Storage in front of it."
+
+	AephiexStorageMine = "Mine Parts Storage"
+	AephiexStorageMineIcon = &AephiexStorageMine
+	AephiexStorageMineDesc = "A designated mine parts storage that is armored and more durable. It also transfers its contents to the launcher or Mine Storage in front of it."
+
+	AephiexStorageMissileEMP = "E.M.P. Missile Parts Storage"
+	AephiexStorageMissileEMPIcon = &AephiexStorageMissileEMP
+	AephiexStorageMissileEMPDesc = "A designated E.M.P. missile parts storage that is armored and more durable. It also transfers its contents to the launcher or E.M.P. Missile Parts Storage in front of it."
+
+	AephiexStorageMissileHE = "H.E. Missile Parts Storage"
+	AephiexStorageMissileHEIcon = &AephiexStorageMissileHE
+	AephiexStorageMissileHEDesc = "A designated H.E. missile parts storage that is armored and more durable. It also transfers its contents to the launcher or H.E. Missile Parts Storage in front of it."
+
+	AephiexStorageMissileNuke = "Nuclear Missile Parts Storage"
+	AephiexStorageMissileNukeIcon = &AephiexStorageMissileNuke
+	AephiexStorageMissileNukeDesc = "A designated nuclear missile parts storage that is armored and more durable. It also transfers its contents to the launcher or nuclear Missile Parts Storage in front of it."
+}

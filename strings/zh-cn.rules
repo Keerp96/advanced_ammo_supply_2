@@ -1,0 +1,25 @@
+__Name = "Simplified Chinese"
+__DebugOnly = false
+
+Parts
+{
+	AephiexStorageAmmo = "弹药库"
+	AephiexStorageAmmoIcon = &AephiexStorageAmmo
+	AephiexStorageAmmoDesc = "专门化的弹药库，覆盖装甲因此更加坚韧。它也会将储存的物品输送给前方的火炮或弹药库。"
+
+	AephiexStorageMine = "地雷部件库"
+	AephiexStorageMineIcon = &AephiexStorageMine
+	AephiexStorageMineDesc = "专门化的地雷部件库，覆盖装甲因此更加坚韧。它也会将储存的物品输送给前方的发射器或地雷部件库。"
+
+	AephiexStorageMissileEMP = "电磁脉冲导弹部件库"
+	AephiexStorageMissileEMPIcon = &AephiexStorageMissileEMP
+	AephiexStorageMissileEMPDesc = "专门化的电磁脉冲导弹部件库，覆盖装甲因此更加坚韧。它也会将储存的物品输送给前方的发射器或电磁脉冲导弹部件库。"
+
+	AephiexStorageMissileHE = "高爆导弹部件库"
+	AephiexStorageMissileHEIcon = &AephiexStorageMissileHE
+	AephiexStorageMissileHEDesc = "专门化的高爆导弹部件库，覆盖装甲因此更加坚韧。它也会将储存的物品输送给前方的发射器或高爆导弹部件库。"
+
+	AephiexStorageMissileNuke = "核导弹部件库"
+	AephiexStorageMissileNukeIcon = &AephiexStorageMissileNuke
+	AephiexStorageMissileNukeDesc = "专门化的核导弹部件库，覆盖装甲因此更加坚韧。它也会将储存的物品输送给前方的发射器或核导弹部件库。"
+}

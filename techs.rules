@@ -1,0 +1,53 @@
+Techs
+[
+	{
+		ID = aephiex.technology.storage_ammo
+		NameKey = &<terran/storage_ammo/storage_ammo.rules>/Part/NameKey
+		DescriptionKey = &<terran/storage_ammo/storage_ammo.rules>/Part/DescriptionKey
+		Icon = &<terran/storage_ammo/storage_ammo.rules>/Part/EditorIcon
+		EditorGroup = &<terran/storage_ammo/storage_ammo.rules>/Part/EditorGroup
+		PartsUnlocked = [ &<terran/storage_ammo/storage_ammo.rules>/Part/ID ]
+		Cost = 2000
+		Prerequisites = [ cosmoteer.factory_ammo ]
+	}
+	{
+		ID = aephiex.technology.storage_missile_he
+		NameKey = &<terran/storage_missile_he/storage_missile_he.rules>/Part/NameKey
+		DescriptionKey = &<terran/storage_missile_he/storage_missile_he.rules>/Part/DescriptionKey
+		Icon = &<terran/storage_missile_he/storage_missile_he.rules>/Part/EditorIcon
+		EditorGroup = &<terran/storage_missile_he/storage_missile_he.rules>/Part/EditorGroup
+		PartsUnlocked = [ &<terran/storage_missile_he/storage_missile_he.rules>/Part/ID ]
+		Cost = 3000
+		Prerequisites = [ cosmoteer.factory_he, aephiex.technology.storage_ammo ]
+	}
+	{
+		ID = aephiex.technology.storage_missile_emp
+		NameKey = &<terran/storage_missile_emp/storage_missile_emp.rules>/Part/NameKey
+		DescriptionKey = &<terran/storage_missile_emp/storage_missile_emp.rules>/Part/DescriptionKey
+		Icon = &<terran/storage_missile_emp/storage_missile_emp.rules>/Part/EditorIcon
+		EditorGroup = &<terran/storage_missile_emp/storage_missile_emp.rules>/Part/EditorGroup
+		PartsUnlocked = [ &<terran/storage_missile_emp/storage_missile_emp.rules>/Part/ID ]
+		Cost = 5000
+		Prerequisites = [ cosmoteer.factory_emp, aephiex.technology.storage_ammo ]
+	}
+	{
+		ID = aephiex.technology.storage_missile_nuke
+		NameKey = &<terran/storage_missile_nuke/storage_missile_nuke.rules>/Part/NameKey
+		DescriptionKey = &<terran/storage_missile_nuke/storage_missile_nuke.rules>/Part/DescriptionKey
+		Icon = &<terran/storage_missile_nuke/storage_missile_nuke.rules>/Part/EditorIcon
+		EditorGroup = &<terran/storage_missile_nuke/storage_missile_nuke.rules>/Part/EditorGroup
+		PartsUnlocked = [ &<terran/storage_missile_nuke/storage_missile_nuke.rules>/Part/ID ]
+		Cost = 8000
+		Prerequisites = [ cosmoteer.factory_nuke, aephiex.technology.storage_ammo ]
+	}
+	{
+		ID = aephiex.technology.storage_mine
+		NameKey = &<terran/storage_mine/storage_mine.rules>/Part/NameKey
+		DescriptionKey = &<terran/storage_mine/storage_mine.rules>/Part/DescriptionKey
+		Icon = &<terran/storage_mine/storage_mine.rules>/Part/EditorIcon
+		EditorGroup = &<terran/storage_mine/storage_mine.rules>/Part/EditorGroup
+		PartsUnlocked = [ &<terran/storage_mine/storage_mine.rules>/Part/ID ]
+		Cost = 3000
+		Prerequisites = [ cosmoteer.factory_mine, aephiex.technology.storage_ammo ]
+	}
+]
