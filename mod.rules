@@ -1,20 +1,20 @@
 
-ID = aephiex.advanced_ammo_storage_and_supply
+ID = aephiex.advanced_ammo_storage_and_supply2
 
-Name = "Advanced Ammo Storage ＆ Supply"
+Name = "Advanced Ammo Storage ＆ Supply 2"
 
-Version = 1.0.0
+Version = 2.0.0
 
-CompatibleGameVersions = ["0.20.7"]
+CompatibleGameVersions = ["0.28.1"]
 
 ModifiesMultiplayer = true
 
-Author = "Aephiex"
+Author = "Bwilliamson55"
 
 Logo = "logo.png"
 
 Description =
-	"Adds an Ammo Storage that is armored and more durable. It also transfers its contents to the cannon or Ammo Storage in front of it. It costs more than storage bays and it does not offer roof access.\n\n"\
+	"FORKED version of aephiex.advanced_ammo_storage_and_supply - Adds an Ammo Storage that is armored and more durable. It also transfers its contents to the cannon or Ammo Storage in front of it. It costs more than storage bays and it does not offer roof access.\n\n"\
 	"There are also counterparts for H.E. missile parts, E.M.P. missile parts, nuclear missile parts, and mine parts."
 
 StringsFolder = "strings"
