@@ -60,7 +60,8 @@ Part : <./Data/ships/terran/base_part_terran.rules>/Part
 			DefaultPriority = &/PRIORITIES/Storage_Supply
 		}
 
-		NextChainProxy
+		// Forward Proxies
+		NextChainProxy_Aephiex
 		{
 			Type = ResourceStorageProxy
 			ResourceType = mine_part
@@ -71,15 +72,124 @@ Part : <./Data/ships/terran/base_part_terran.rules>/Part
 			}
 			ComponentID = MineStorage__Aephiex
 		}
+		NextChainProxy_Standard
+		{
+			Type = ResourceStorageProxy
+			ResourceType = mine_part
+			PartLocation = [0, -1]
+			PartCriteria
+			{
+				Category = uses_mines
+			}
+			ComponentID = MineStorage
+		}
 
-		ResourceConverter
+		// Left Proxies
+		NextChainProxyLeft_Aephiex
+		{
+			Type = ResourceStorageProxy
+			ResourceType = mine_part
+			PartLocation = [-1, 0]
+			PartCriteria
+			{
+				Category = uses_mines
+			}
+			ComponentID = MineStorage__Aephiex
+		}
+		NextChainProxyLeft_Standard
+		{
+			Type = ResourceStorageProxy
+			ResourceType = mine_part
+			PartLocation = [-1, 0]
+			PartCriteria
+			{
+				Category = uses_mines
+			}
+			ComponentID = MineStorage
+		}
+
+		// Right Proxies
+		NextChainProxyRight_Aephiex
+		{
+			Type = ResourceStorageProxy
+			ResourceType = mine_part
+			PartLocation = [1, 0]
+			PartCriteria
+			{
+				Category = uses_mines
+			}
+			ComponentID = MineStorage__Aephiex
+		}
+		NextChainProxyRight_Standard
+		{
+			Type = ResourceStorageProxy
+			ResourceType = mine_part
+			PartLocation = [1, 0]
+			PartCriteria
+			{
+				Category = uses_mines
+			}
+			ComponentID = MineStorage
+		}
+
+		// Forward Converters
+		ResourceConverter_Aephiex
 		{
 			Type = ResourceConverter
 			FromStorage = MineStorage__Aephiex
-			ToStorage = NextChainProxy
+			ToStorage = NextChainProxy_Aephiex
 			FromQuantity = 1
 			ToQuantity = 1
-			Interval = 0.2
+			Interval = 0.1
+		}
+		ResourceConverter_Standard
+		{
+			Type = ResourceConverter
+			FromStorage = MineStorage__Aephiex
+			ToStorage = NextChainProxy_Standard
+			FromQuantity = 1
+			ToQuantity = 1
+			Interval = 0.1
+		}
+
+		// Left Converters
+		ResourceConverterLeft_Aephiex
+		{
+			Type = ResourceConverter
+			FromStorage = MineStorage__Aephiex
+			ToStorage = NextChainProxyLeft_Aephiex
+			FromQuantity = 1
+			ToQuantity = 1
+			Interval = 0.1
+		}
+		ResourceConverterLeft_Standard
+		{
+			Type = ResourceConverter
+			FromStorage = MineStorage__Aephiex
+			ToStorage = NextChainProxyLeft_Standard
+			FromQuantity = 1
+			ToQuantity = 1
+			Interval = 0.1
+		}
+
+		// Right Converters
+		ResourceConverterRight_Aephiex
+		{
+			Type = ResourceConverter
+			FromStorage = MineStorage__Aephiex
+			ToStorage = NextChainProxyRight_Aephiex
+			FromQuantity = 1
+			ToQuantity = 1
+			Interval = 0.1
+		}
+		ResourceConverterRight_Standard
+		{
+			Type = ResourceConverter
+			FromStorage = MineStorage__Aephiex
+			ToStorage = NextChainProxyRight_Standard
+			FromQuantity = 1
+			ToQuantity = 1
+			Interval = 0.1
 		}
 
 		Graphics

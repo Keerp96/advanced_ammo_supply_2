@@ -3,7 +3,7 @@ ID = aephiex.advanced_ammo_storage_and_supply2
 
 Name = "Advanced Ammo Storage ＆ Supply 2"
 
-Version = 2.0.0
+Version = 2.0.1
 
 CompatibleGameVersions = ["0.28.1"]
 
@@ -15,23 +15,35 @@ Logo = "logo.png"
 
 Description = 
     "FORKED version of aephiex.advanced_ammo_storage_and_supply\n\n"\
-    "### What's New\n"\
-    "- **More Ammo Support:**\n"\
-    "  - Added storage for EMP, Nuke, H.E. missile parts, and mines.\n"\
-    "  - Works with modular missiles.\n"\
-    "- **More Cannons Mod Support:**\n"\
-    "  - Compatible with EMP and NUKE cannons.\n"\
-    "- **Star Wars Mod Support:**\n"\
-    "  - Works with SW missile launchers (mini cluster, concussion, intruder, hex, etc.).\n"\
-    "- **More Mod Compatibility:**\n"\
-    "  - Supports Galactic Allegiance Missile Silos, Standalone Missile Silos, Jani’s Shipyard, and Advanced Missile Launcher.\n"\
-    "- **Ammo Proxy Movement:**\n"\
-    "  - Ammo can now transfer **left, right, or forward**.\n"\
-    "- **Stronger Storage:**\n"\
-    "  - Armored storage bays for better durability.\n"\
-    "  - No roof access to keep things balanced.\n\n"\
-    "This is a fork and update to the original mod by aephiex. The original mod is no longer maintained. Github repo is at https://github.com/Bwilliamson55/advanced_ammo_supply_2"
-
+    "[h1]Advanced Ammo Storage & Supply 2[/h1]\n\n"\
+    "[b]Version:[/b] 2.0.1\n"\
+    "[b]Author:[/b] Bwilliamson55\n"\
+    "[b]Compatible Game Versions:[/b] 0.28.1\n"\
+    "[b][url=https://github.com/Bwilliamson55/advanced_ammo_supply_2]GitHub Repository[/url][/b]\n\n"\
+    "[hr][/hr]\n\n"\
+    "[h2]Overview[/h2]\n\n"\
+    "This is a forked and updated version of Aephiex's original Advanced Ammo Storage & Supply mod.\n"\
+    "The original mod is no longer maintained, and this version expands its functionality with additional overrides, added compatibility patches, and improved ammo logistics through sideways movement.\n\n"\
+    "[hr][/hr]\n\n"\
+    "[h2]New Features and Improvements[/h2]\n\n"\
+    "[h3]Compatibility with Additional Mods[/h3]\n"\
+    "- [b]More Cannons Mod:[/b] EMP and Nuke cannons now supported\n"\
+    "- [b]Star Wars Mod:[/b] Supports mini-cluster, concussion, intruder, and hex missiles\n"\
+    "- [b]Missile Mods:[/b] Compatible with Galactic Allegiance Missile Silos, Standalone Missile Silos, Jani’s Shipyard, and Advanced Missile Launcher\n\n"\
+    "[h3]New Ammo Transfer System[/h3]\n"\
+    "- Ammunition can transfer [b]left, right, or forward[/b]\n"\
+    "[h3]Improved Storage Durability[/h3]\n"\
+    "- Armored storage bays provide additional protection\n"\
+    "- No roof access, maintaining balance and preventing excessive ammo stacking\n\n"\
+    "[hr][/hr]\n\n"\
+    "[h2]Technical Details[/h2]\n\n"\
+    "This version mostly replaces and beta-maxes mod overrides per component by pushing to custom and vanilla storages\n"\
+	"- For example, HE Missile storage will attempt to transfer to HEMissileStorage__Aephiex components, CombinedMissileStorage, and MissileStorages\n"\
+    "- [b]This means most mods now needs no special updates or tweaks to be compatible[/b]\n"\
+    "[hr][/hr]\n\n"\
+    "[h2]Feedback and Support[/h2]\n\n"\
+    "For bug reports, feature requests, or contributions, visit the [b][url=https://github.com/Bwilliamson55/advanced_ammo_supply_2]GitHub Repository[/url][/b].\n"\
+    "Discussion and updates will be shared there. Maybe.\n\n"
 
 StringsFolder = "strings"
 
@@ -88,39 +100,6 @@ Actions
 		]
 	}
 
-	// Overrides 
-	{
-		Action = Overrides
-		OverrideIn = "<../../../workshop/content/799600/3052680147/2_420mm/2_420mm.rules>/Part/Components"
-		Overrides
-		{
-			EMPMissileStorage__Aephiex
-			{
-				Type = MultiResourceStorage
-				ResourceType = missile_part_emp
-				ResourceStorages = [ AmmoStorage ]
-				AddMode = PrioritizeLeastEmptyCapacity
-				RemoveMode = PrioritizeMostEmptyCapacity
-			}
-		}
-	}
-
-	{
-		Action = Overrides
-		OverrideIn = "<../../../workshop/content/799600/3052680147/2_420mm_b/2_420mm_b.rules>/Part/Components"
-		Overrides
-		{
-			NukeMissileStorage__Aephiex
-			{
-				Type = MultiResourceStorage
-				ResourceType = missile_part_nuke
-				ResourceStorages = [ AmmoStorage ]
-				AddMode = PrioritizeLeastEmptyCapacity
-				RemoveMode = PrioritizeMostEmptyCapacity
-			}
-		}
-	}
-
 	// ####################################################################################################
 	// # Support of SW Missile Launcher
 	// ####################################################################################################
@@ -159,136 +138,12 @@ Actions
 			uses_nukes
 		]
 	}
-
-    // Small
-	{
-		Action = Overrides
-		OverrideIn = "<../../../workshop/content/799600/3119349707/ships/terran/weapons/missile_launchers/missile_launcher_small/mini_cluster/missile_launcher_mini_cluster.rules>/Components"
-		Overrides
-		{
-			HEMissileStorage__Aephiex
-			{
-				Type = MultiResourceStorage
-				ResourceType = missile_part_he
-				ResourceStorages = [ CombinedMissileStorage ]
-				AddMode = PrioritizeLeastEmptyCapacity
-				RemoveMode = PrioritizeMostEmptyCapacity
-			}
-		}
-	}
-	{
-		Action = Overrides
-		OverrideIn = "<../../../workshop/content/799600/3119349707/ships/terran/weapons/missile_launchers/missile_launcher_small/concussion/missile_launcher_concussion.rules>/Components"
-		Overrides
-		{
-			HEMissileStorage__Aephiex
-			{
-				Type = MultiResourceStorage
-				ResourceType = missile_part_he
-				ResourceStorages = [ CombinedMissileStorage ]
-				AddMode = PrioritizeLeastEmptyCapacity
-				RemoveMode = PrioritizeMostEmptyCapacity
-			}
-		}
-	}
-
-	{
-		Action = Overrides
-		OverrideIn = "<../../../workshop/content/799600/3119349707/ships/terran/weapons/missile_launchers/missile_launcher_small/intruder/missile_launcher_intruder.rules>/Components"
-		Overrides
-		{
-			EMPMissileStorage__Aephiex
-			{
-				Type = MultiResourceStorage
-				ResourceType = missile_part_emp
-				ResourceStorages = [ CombinedMissileStorage_EMP ]
-				AddMode = PrioritizeLeastEmptyCapacity
-				RemoveMode = PrioritizeMostEmptyCapacity
-			}
-		}
-	}
-
-	{
-		Action = Overrides
-		OverrideIn = "<../../../workshop/content/799600/3119349707/ships/terran/weapons/missile_launchers/missile_launcher_small/hex/missile_launcher_hex.rules>/Components"
-		Overrides
-		{
-			NukeMissileStorage__Aephiex
-			{
-				Type = MultiResourceStorage
-				ResourceType = missile_part_nuke
-				ResourceStorages = [ CombinedMissileStorage ]
-				AddMode = PrioritizeLeastEmptyCapacity
-				RemoveMode = PrioritizeMostEmptyCapacity
-			}
-		}
-	}
-
-	// Medium 
-
-	{
-		Action = Overrides
-		OverrideIn = "<../../../workshop/content/799600/3119349707/ships/terran/weapons/missile_launchers/missile_launcher_medium/intruder/missile_launcher_intruder.rules>/Components"
-		Overrides
-		{
-			EMPMissileStorage__Aephiex
-			{
-				Type = MultiResourceStorage
-				ResourceType = missile_part_emp
-				ResourceStorages = [ CombinedMissileStorage_EMP ]
-				AddMode = PrioritizeLeastEmptyCapacity
-				RemoveMode = PrioritizeMostEmptyCapacity
-			}
-		}
-	}
-
-	{
-		Action = Overrides
-		OverrideIn = "<../../../workshop/content/799600/3119349707/ships/terran/weapons/missile_launchers/missile_launcher_medium/hex/missile_launcher_hex.rules>/Components"
-		Overrides
-		{
-			NukeMissileStorage__Aephiex
-			{
-				Type = MultiResourceStorage
-				ResourceType = missile_part_nuke
-				ResourceStorages = [ CombinedMissileStorage ]
-				AddMode = PrioritizeLeastEmptyCapacity
-				RemoveMode = PrioritizeMostEmptyCapacity
-			}
-		}
-	}
-
-	{
-		Action = Overrides
-		OverrideIn = "<../../../workshop/content/799600/3119349707/ships/terran/weapons/missile_launchers/missile_launcher_medium/concussion/missile_launcher_concussion.rules>/Components"
-		Overrides
-		{
-			HEMissileStorage__Aephiex
-			{
-				Type = MultiResourceStorage
-				ResourceType = missile_part_he
-				ResourceStorages = [ CombinedMissileStorage_HE ]
-				AddMode = PrioritizeLeastEmptyCapacity
-				RemoveMode = PrioritizeMostEmptyCapacity
-			}
-		}
-	}
-
-	{
-		Action = Overrides
-		OverrideIn = "<../../../workshop/content/799600/3119349707/ships/terran/weapons/missile_launchers/missile_launcher_medium/cluster/missile_launcher_cluster.rules>/Components"
-		Overrides
-		{
-			HEMissileStorage__Aephiex
-			{
-				Type = MultiResourceStorage
-				ResourceType = missile_part_he
-				ResourceStorages = [ CombinedMissileStorage ]
-				AddMode = PrioritizeLeastEmptyCapacity
-				RemoveMode = PrioritizeMostEmptyCapacity
-			}
-		}
-	}
+	
+	// ####################################################################################################
+	// # From here down, at least missiles and mines, is no longer needed but doesn't hurt to keep it
+	// ####################################################################################################
+	// ####################################################################################################
+	// ####################################################################################################
 
 	// ####################################################################################################
 	// # Support of Vanilla Missile Launcher

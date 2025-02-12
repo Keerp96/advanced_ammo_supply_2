@@ -60,8 +60,8 @@ Part : <./Data/ships/terran/base_part_terran.rules>/Part
 			DefaultPriority = &/PRIORITIES/Storage_Supply
 		}
 
-		// Forward Proxy
-		NextChainProxy
+		// Forward Proxies
+		NextChainProxy_Aephiex
 		{
 			Type = ResourceStorageProxy
 			ResourceType = missile_part_he
@@ -71,10 +71,32 @@ Part : <./Data/ships/terran/base_part_terran.rules>/Part
 				Category = uses_missiles
 			}
 			ComponentID = HEMissileStorage__Aephiex
+    	}
+		NextChainProxy_Combined
+		{
+			Type = ResourceStorageProxy
+			ResourceType = missile_part_he
+			PartLocation = [0, -1]
+			PartCriteria
+			{
+				Category = uses_missiles
+			}
+			ComponentID = CombinedMissileStorage
+		}
+		NextChainProxy_Standard
+		{
+			Type = ResourceStorageProxy
+			ResourceType = missile_part_he
+			PartLocation = [0, -1]
+			PartCriteria
+			{
+				Category = uses_missiles
+			}
+			ComponentID = MissileStorage
 		}
 
-		// Left Proxy
-		NextChainProxyLeft
+		// Left Proxies
+		NextChainProxyLeft_Aephiex
 		{
 			Type = ResourceStorageProxy
 			ResourceType = missile_part_he
@@ -85,9 +107,31 @@ Part : <./Data/ships/terran/base_part_terran.rules>/Part
 			}
 			ComponentID = HEMissileStorage__Aephiex
 		}
+		NextChainProxyLeft_Combined
+		{
+			Type = ResourceStorageProxy
+			ResourceType = missile_part_he
+			PartLocation = [-1, 0]
+			PartCriteria
+			{
+				Category = uses_missiles
+			}
+			ComponentID = CombinedMissileStorage
+		}
+		NextChainProxyLeft_Standard
+		{
+			Type = ResourceStorageProxy
+			ResourceType = missile_part_he
+			PartLocation = [-1, 0]
+			PartCriteria
+			{
+				Category = uses_missiles
+			}
+			ComponentID = MissileStorage
+		}
 
-		// Right Proxy
-		NextChainProxyRight
+		// Right Proxies
+		NextChainProxyRight_Aephiex
 		{
 			Type = ResourceStorageProxy
 			ResourceType = missile_part_he
@@ -98,38 +142,114 @@ Part : <./Data/ships/terran/base_part_terran.rules>/Part
 			}
 			ComponentID = HEMissileStorage__Aephiex
 		}
+		NextChainProxyRight_Combined
+		{
+			Type = ResourceStorageProxy
+			ResourceType = missile_part_he
+			PartLocation = [1, 0]
+			PartCriteria
+			{
+				Category = uses_missiles
+			}
+			ComponentID = CombinedMissileStorage
+		}
+		NextChainProxyRight_Standard
+		{
+			Type = ResourceStorageProxy
+			ResourceType = missile_part_he
+			PartLocation = [1, 0]
+			PartCriteria
+			{
+				Category = uses_missiles
+			}
+			ComponentID = MissileStorage
+		}
 
-		// Resource movement staggered over time
-		ResourceConverterLeft
+    	// Forward Converters
+    	ResourceConverter_Aephiex
 		{
 			Type = ResourceConverter
 			FromStorage = HEMissileStorage__Aephiex
-			ToStorage = NextChainProxyLeft
+        	ToStorage = NextChainProxy_Aephiex
+			FromQuantity = 1
+			ToQuantity = 1
+			Interval = 0.1
+		}
+    	ResourceConverter_Combined
+		{
+			Type = ResourceConverter
+			FromStorage = HEMissileStorage__Aephiex
+        	ToStorage = NextChainProxy_Combined
+			FromQuantity = 1
+			ToQuantity = 1
+			Interval = 0.1
+		}
+    	ResourceConverter_Standard
+		{
+			Type = ResourceConverter
+			FromStorage = HEMissileStorage__Aephiex
+       		 ToStorage = NextChainProxy_Standard
 			FromQuantity = 1
 			ToQuantity = 1
 			Interval = 0.1
 		}
 
-		ResourceConverterForward
+		// Left Converters
+		ResourceConverterLeft_Aephiex
 		{
 			Type = ResourceConverter
 			FromStorage = HEMissileStorage__Aephiex
-			ToStorage = NextChainProxy
+			ToStorage = NextChainProxyLeft_Aephiex
 			FromQuantity = 1
 			ToQuantity = 1
 			Interval = 0.1
-			Offset = 0.2
+		}
+		ResourceConverterLeft_Combined
+		{
+			Type = ResourceConverter
+			FromStorage = HEMissileStorage__Aephiex
+			ToStorage = NextChainProxyLeft_Combined
+			FromQuantity = 1
+			ToQuantity = 1
+			Interval = 0.1
+		}
+		ResourceConverterLeft_Standard
+		{
+			Type = ResourceConverter
+			FromStorage = HEMissileStorage__Aephiex
+			ToStorage = NextChainProxyLeft_Standard
+			FromQuantity = 1
+			ToQuantity = 1
+			Interval = 0.1
 		}
 
-		ResourceConverterRight
+		// Right Converters
+		ResourceConverterRight_Aephiex
 		{
 			Type = ResourceConverter
 			FromStorage = HEMissileStorage__Aephiex
-			ToStorage = NextChainProxyRight
+			ToStorage = NextChainProxyRight_Aephiex
 			FromQuantity = 1
 			ToQuantity = 1
 			Interval = 0.1
-			Offset = 0.4
+		}
+		ResourceConverterRight_Combined
+		{
+			Type = ResourceConverter
+			FromStorage = HEMissileStorage__Aephiex
+			ToStorage = NextChainProxyRight_Combined
+			FromQuantity = 1
+			ToQuantity = 1
+			Interval = 0.1
+		}
+		ResourceConverterRight_Standard
+		{
+			Type = ResourceConverter
+			FromStorage = HEMissileStorage__Aephiex
+			ToStorage = NextChainProxyRight_Standard
+			FromQuantity = 1
+			ToQuantity = 1
+			Interval = 0.1
 		}
 
 		Graphics

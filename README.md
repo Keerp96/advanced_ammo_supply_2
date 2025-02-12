@@ -4,52 +4,62 @@
 
 ## Features & Changes
 
-### ✅ Expanded Ammo Support
+### Expanded Ammo Support
 - Added storage for **EMP, Nuke, H.E. missile parts, and mines**.
 - Works with **modular missiles**.
 
-### ✅ More Cannons Mod Compatibility
+### More Cannons Mod Compatibility
 - Supports **EMP and NUKE cannons**.
 - Added missing **TypeCategories** to ensure proper function.
 
-### ✅ Star Wars Mod Support
+### Star Wars Mod Support
 - Works with **SW missile launchers** (mini cluster, concussion, intruder, hex, etc.).
 
-### ✅ More Mod Compatibility
+### More Mod Compatibility
 - Supports:
   - **Galactic Allegiance Missile Silos**
   - **Standalone Missile Silos**
   - **Jani’s Shipyard**
   - **Advanced Missile Launcher**
 
-### ✅ Ammo Proxy Movement
+### Ammo Proxy Movement
 - Ammo can transfer **left, right, or forward**, improving logistics.
 
-### ✅ Stronger Storage
+### Stronger Storage
 - **Armored storage bays** for better durability.
 - **No roof access** to keep balance.
 
 ---
 
 ## Installation
-1. Use the steam workshop and subscribe to this mod
-2. In game, the main 'mods' menu is where you enable mods including this one
-3. restart the game as it instructs
+1. Subscribe to the mod on **Steam Workshop**.
+2. Enable it from the **Mods** menu in-game.
+3. Restart the game as prompted.
 
-## For manual Installation
-1. Copy these files to your main 'mods' folder in Cosmoteer
-2. The 'Mods' folder can be found by 
-   1. right clicking the game in your library
-   2. Select "Installed Files" tab
-   3. Click 'Browse'
-3. My mod folder path, for example: C:\Users\bwilliamson\Saved Games\Cosmoteer\76561198001741570\Mods
+### Manual Installation
+1. Copy the mod files to your main **Mods** folder in Cosmoteer.
+2. Find the **Mods** folder:
+   - Right-click the game in **Steam Library**.
+   - Select **Installed Files** tab.
+   - Click **Browse** to open the game directory.
+3. Example path: C:\Users\bwilliamson\Saved Games\Cosmoteer\76561198001741570\Mods
 
 ---
 
 ## How to Contribute
 - Clone the repository.
-- Submit a pull request with improvements.
+- Submit a **pull request** with improvements.
 - Report issues or suggest changes in the **Issues** tab.
+
+---
+
+## Technical Details
+- **Beta-maxed mod overrides** for seamless compatibility.
+- **Dynamic storage integration**:
+- HE Missile Storage can transfer to `HEMissileStorage__Aephiex`, `CombinedMissileStorage`, and `MissileStorage`.
+- Similar logic applied to EMP, Nuke, and Mines.
+- **Auto-compatibility with most mods**:
+- No special updates or tweaks needed.
 
 ---
 
@@ -60,6 +70,4 @@
 ---
 
 ## License
-This mod is open-source. Feel free to modify, improve, and share! Please credit the original author where applicable.
-
----
+This mod is **open-source**. Modify, improve, and share freely! Please credit the original author where applicable.
