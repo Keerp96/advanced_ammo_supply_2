@@ -3,7 +3,7 @@ ID = aephiex.advanced_ammo_storage_and_supply2
 
 Name = "Advanced Ammo Storage ＆ Supply 2"
 
-Version = 2.0.1
+Version = 2.0.2
 
 CompatibleGameVersions = ["0.28.1"]
 
@@ -13,10 +13,9 @@ Author = "Bwilliamson55"
 
 Logo = "logo.png"
 
-Description = 
-    "FORKED version of aephiex.advanced_ammo_storage_and_supply\n\n"\
+Description = "FORKED version of aephiex.advanced_ammo_storage_and_supply\n\n"\
     "[h1]Advanced Ammo Storage & Supply 2[/h1]\n\n"\
-    "[b]Version:[/b] 2.0.1\n"\
+    "[b]Version:[/b] 2.0.2\n"\
     "[b]Author:[/b] Bwilliamson55\n"\
     "[b]Compatible Game Versions:[/b] 0.28.1\n"\
     "[b][url=https://github.com/Bwilliamson55/advanced_ammo_supply_2]GitHub Repository[/url][/b]\n\n"\
@@ -26,6 +25,8 @@ Description =
     "The original mod is no longer maintained, and this version expands its functionality with additional overrides, added compatibility patches, and improved ammo logistics through sideways movement.\n\n"\
     "[hr][/hr]\n\n"\
     "[h2]New Features and Improvements[/h2]\n\n"\
+	"[h3]Chaingun Ammo Support[/h3]\n"\
+	"- Chaingun and chaingun magazines now accept ammo transfer from belts\n"\
     "[h3]Compatibility with Additional Mods[/h3]\n"\
     "- [b]More Cannons Mod:[/b] EMP and Nuke cannons now supported\n"\
     "- [b]Star Wars Mod:[/b] Supports mini-cluster, concussion, intruder, and hex missiles\n"\
@@ -70,6 +71,20 @@ Actions
 		Action = AddMany
 		AddTo = "<modes/career/techs.rules>/Techs"
 		ManyToAdd = &<techs.rules>/Techs
+	}
+
+	// ####################################################################################################
+	// # Push ammo into chaingun magazines by adding uses_ammo to the magazine parts
+	// ####################################################################################################
+	// \SteamLibrary\steamapps\common\Cosmoteer\Data\ships\terran\chaingun_magazine\chaingun_magazine.rules
+
+	{
+		Action = AddMany
+		AddTo = "<ships/terran/chaingun_magazine/chaingun_magazine.rules>/Part/TypeCategories"
+		ManyToAdd
+		[
+			uses_ammo
+		]
 	}
 
 	// ####################################################################################################

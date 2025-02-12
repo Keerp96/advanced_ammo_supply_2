@@ -6,7 +6,7 @@ Part : <./Data/ships/terran/base_part_terran.rules>/Part
 	DescriptionKey = "Parts/AephiexStorageAmmoDesc"
 	EditorGroup = "Storage"
 	SelectionTypeID = &ID
-	TypeCategories = [ storage, storageblend, uses_ammo ]
+	TypeCategories = [ storage, storageblend, uses_ammo, chaingun_ammo_supplier ]
 
 	Resources
 	[
@@ -60,7 +60,7 @@ Part : <./Data/ships/terran/base_part_terran.rules>/Part
 			DefaultPriority = &/PRIORITIES/Storage_Supply
 		}
 
-		// Forward Proxy
+        // Forward Proxies
 		NextChainProxy
 		{
 			Type = ResourceStorageProxy
@@ -72,8 +72,19 @@ Part : <./Data/ships/terran/base_part_terran.rules>/Part
 			}
 			ComponentID = AmmoStorage
 		}
+        NextChainProxy_Combined
+        {
+            Type = ResourceStorageProxy
+            ResourceType = bullet
+            PartLocation = [0, -1]
+            PartCriteria
+            {
+                Category = uses_ammo
+            }
+            ComponentID = CombinedAmmoStorage
+        }
 
-		// Left Proxy
+        // Left Proxies
 		NextChainProxyLeft
 		{
 			Type = ResourceStorageProxy
@@ -85,8 +96,19 @@ Part : <./Data/ships/terran/base_part_terran.rules>/Part
 			}
 			ComponentID = AmmoStorage
 		}
+        NextChainProxyLeft_Combined
+        {
+            Type = ResourceStorageProxy
+            ResourceType = bullet
+            PartLocation = [-1, 0]
+            PartCriteria
+            {
+                Category = uses_ammo
+            }
+            ComponentID = CombinedAmmoStorage
+        }
 
-		// Right Proxy
+        // Right Proxies
 		NextChainProxyRight
 		{
 			Type = ResourceStorageProxy
@@ -98,8 +120,39 @@ Part : <./Data/ships/terran/base_part_terran.rules>/Part
 			}
 			ComponentID = AmmoStorage
 		}
+        NextChainProxyRight_Combined
+        {
+            Type = ResourceStorageProxy
+            ResourceType = bullet
+            PartLocation = [1, 0]
+            PartCriteria
+            {
+                Category = uses_ammo
+            }
+            ComponentID = CombinedAmmoStorage
+        }
 
-		// Staggered Resource Movement to Avoid Conflicts
+        // Forward Converters
+        ResourceConverter
+        {
+            Type = ResourceConverter
+            FromStorage = AmmoStorage
+            ToStorage = NextChainProxy
+            FromQuantity = 1
+            ToQuantity = 1
+            Interval = 0.1
+        }
+        ResourceConverter_Combined
+        {
+            Type = ResourceConverter
+            FromStorage = AmmoStorage
+            ToStorage = NextChainProxy_Combined
+            FromQuantity = 1
+            ToQuantity = 1
+            Interval = 0.1
+        }
+
+        // Left Converters
 		ResourceConverterLeft
 		{
 			Type = ResourceConverter
@@ -109,18 +162,17 @@ Part : <./Data/ships/terran/base_part_terran.rules>/Part
 			ToQuantity = 1
 			Interval = 0.1
 		}
-
-		ResourceConverterForward
+        ResourceConverterLeft_Combined
 		{
 			Type = ResourceConverter
 			FromStorage = AmmoStorage
-			ToStorage = NextChainProxy
+            ToStorage = NextChainProxyLeft_Combined
 			FromQuantity = 1
 			ToQuantity = 1
 			Interval = 0.1
-			Offset = 0.2
 		}
 
+        // Right Converters
 		ResourceConverterRight
 		{
 			Type = ResourceConverter
@@ -129,7 +181,15 @@ Part : <./Data/ships/terran/base_part_terran.rules>/Part
 			FromQuantity = 1
 			ToQuantity = 1
 			Interval = 0.1
-			Offset = 0.4
+        }
+        ResourceConverterRight_Combined
+        {
+            Type = ResourceConverter
+            FromStorage = AmmoStorage
+            ToStorage = NextChainProxyRight_Combined
+            FromQuantity = 1
+            ToQuantity = 1
+            Interval = 0.1
 		}
 
 		Graphics
