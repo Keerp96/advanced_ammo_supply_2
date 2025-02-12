@@ -7,6 +7,7 @@
 ### Expanded Ammo Support
 - Added storage for **EMP, Nuke, H.E. missile parts, and mines**.
 - Works with **modular missiles**.
+- Will feed chainguns and mags directly
 
 ### More Cannons Mod Compatibility
 - Supports **EMP and NUKE cannons**.
