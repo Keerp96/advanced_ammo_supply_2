@@ -191,6 +191,157 @@ Part : <./Data/ships/terran/base_part_terran.rules>/Part
             ToQuantity = 1
             Interval = 0.1
 		}
+		
+		// Now the whole thing again but for dpmbullet resource types 
+
+		dpmAmmoStorage
+		{
+			Type = TypedResourceGrid
+			ResourceType = dpmbullet
+			GridRect = [0, 0, 1, 1]
+			Layer = "doodads_low"
+			SpriteInset = 8/64
+		}
+
+		ResourceConsumer_DPM
+		{
+			Type = TypedResourceGridConsumer
+			ResourceType = dpmbullet
+			Storage = dpmAmmoStorage
+			DefaultPriority = &/PRIORITIES/Storage_Supply
+		}
+
+		// Forward Proxies
+		NextChainProxy_DPM
+		{
+			Type = ResourceStorageProxy
+			ResourceType = dpmbullet
+			PartLocation = [0, -1]
+			PartCriteria
+			{
+				Category = uses_ammo
+			}
+			ComponentID = dpmAmmoStorage
+		}
+		NextChainProxy_Combined_DPM
+		{
+			Type = ResourceStorageProxy
+			ResourceType = dpmbullet
+			PartLocation = [0, -1]
+			PartCriteria
+			{
+				Category = uses_ammo
+			}
+			ComponentID = CombinedAmmoStorage
+		}
+
+		// Left Proxies
+		NextChainProxyLeft_DPM
+		{
+			Type = ResourceStorageProxy
+			ResourceType = dpmbullet
+			PartLocation = [-1, 0]
+			PartCriteria
+			{
+				Category = uses_ammo
+			}
+			ComponentID = dpmAmmoStorage
+		}
+		NextChainProxyLeft_Combined_DPM
+		{
+			Type = ResourceStorageProxy
+			ResourceType = dpmbullet
+			PartLocation = [-1, 0]
+			PartCriteria
+			{
+				Category = uses_ammo
+			}
+			ComponentID = CombinedAmmoStorage
+		}
+
+		// Right Proxies
+		NextChainProxyRight_DPM
+		{
+			Type = ResourceStorageProxy
+			ResourceType = dpmbullet
+			PartLocation = [1, 0]
+			PartCriteria
+			{
+				Category = uses_ammo
+			}
+			ComponentID = dpmAmmoStorage
+		}
+		NextChainProxyRight_Combined_DPM
+		{
+			Type = ResourceStorageProxy
+			ResourceType = dpmbullet
+			PartLocation = [1, 0]
+			PartCriteria
+			{
+				Category = uses_ammo
+			}
+			ComponentID = CombinedAmmoStorage
+		}
+
+		// Forward Converters
+		ResourceConverter_DPM
+		{
+			Type = ResourceConverter
+			FromStorage = dpmAmmoStorage
+			ToStorage = NextChainProxy_DPM
+			FromQuantity = 1
+			ToQuantity = 1
+			Interval = 0.1
+		}
+		ResourceConverter_Combined_DPM
+		{
+			Type = ResourceConverter
+			FromStorage = dpmAmmoStorage
+			ToStorage = NextChainProxy_Combined_DPM
+			FromQuantity = 1
+			ToQuantity = 1
+			Interval = 0.1
+		}
+
+		// Left Converters
+		ResourceConverterLeft_DPM
+		{
+			Type = ResourceConverter
+			FromStorage = dpmAmmoStorage
+			ToStorage = NextChainProxyLeft_DPM
+			FromQuantity = 1
+			ToQuantity = 1
+			Interval = 0.1
+		}
+		ResourceConverterLeft_Combined_DPM
+		{
+			Type = ResourceConverter
+			FromStorage = dpmAmmoStorage
+			ToStorage = NextChainProxyLeft_Combined_DPM
+			FromQuantity = 1
+			ToQuantity = 1
+			Interval = 0.1
+		}
+
+		// Right Converters
+		ResourceConverterRight_DPM
+		{
+			Type = ResourceConverter
+			FromStorage = dpmAmmoStorage
+			ToStorage = NextChainProxyRight_DPM
+			FromQuantity = 1
+			ToQuantity = 1
+			Interval = 0.1
+		}
+		ResourceConverterRight_Combined_DPM
+		{
+			Type = ResourceConverter
+			FromStorage = dpmAmmoStorage
+			ToStorage = NextChainProxyRight_Combined_DPM
+			FromQuantity = 1
+			ToQuantity = 1
+			Interval = 0.1
+		}
 
 		Graphics
 		{

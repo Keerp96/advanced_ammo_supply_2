@@ -8,6 +8,7 @@
 - Added storage for **EMP, Nuke, H.E. missile parts, and mines**.
 - Works with **modular missiles**.
 - Will feed chainguns and mags directly
+- Supports **Extended Tech Tree Ammo** on the same belts as regular ammo
 
 ### More Cannons Mod Compatibility
 - Supports **EMP and NUKE cannons**.
@@ -22,6 +23,7 @@
   - **Standalone Missile Silos**
   - **Jani’s Shipyard**
   - **Advanced Missile Launcher**
+  - **Extended Tech Tree by SirCampalot**
 
 ### Ammo Proxy Movement
 - Ammo can transfer **left, right, or forward**, improving logistics.
