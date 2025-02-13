@@ -90,6 +90,41 @@ Actions
 		]
 	}
 
+	// Overrides 
+	{
+		Action = Overrides
+		OverrideIn = "<../../../workshop/content/799600/3052680147/2_420mm/2_420mm.rules>/Part/Components"
+		IgnoreIfNotExisting = true
+		Overrides
+		{
+			EMPMissileStorage__Aephiex
+			{
+				Type = MultiResourceStorage
+				ResourceType = missile_part_emp
+				ResourceStorages = [ AmmoStorage ]
+				AddMode = PrioritizeLeastEmptyCapacity
+				RemoveMode = PrioritizeMostEmptyCapacity
+			}
+		}
+	}
+
+	{
+		Action = Overrides
+		OverrideIn = "<../../../workshop/content/799600/3052680147/2_420mm_b/2_420mm_b.rules>/Part/Components"
+		IgnoreIfNotExisting = true
+		Overrides
+		{
+			NukeMissileStorage__Aephiex
+			{
+				Type = MultiResourceStorage
+				ResourceType = missile_part_nuke
+				ResourceStorages = [ AmmoStorage ]
+				AddMode = PrioritizeLeastEmptyCapacity
+				RemoveMode = PrioritizeMostEmptyCapacity
+			}
+		}
+	}
+
 	// ####################################################################################################
 	// # Support of More Cannons EMP and NUKE cannons
 	// ####################################################################################################
