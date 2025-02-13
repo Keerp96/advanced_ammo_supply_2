@@ -191,6 +191,22 @@ Actions
 			uses_nukes
 		]
 	}
+	{
+		Action = Overrides
+		OverrideIn = "<../../../workshop/content/799600/3119349707/ships/terran/weapons/missile_launchers/missile_launcher_small/intruder/missile_launcher_intruder.rules>/Components"
+		IgnoreIfNotExisting = true
+		Overrides
+		{
+			EMPMissileStorage__Aephiex
+			{
+				Type = MultiResourceStorage
+				ResourceType = missile_part_emp
+				ResourceStorages = [CombinedMissileStorage_EMP]
+				AddMode = PrioritizeLeastEmptyCapacity
+				RemoveMode = PrioritizeMostEmptyCapacity
+			}
+		}
+	}
 	
 	// ####################################################################################################
 	// # From here down, at least missiles and mines, is no longer needed but doesn't hurt to keep it
