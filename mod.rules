@@ -11,7 +11,7 @@ ModifiesMultiplayer = true
 
 Author = "Bwilliamson55"
 
-Logo = "logo.png"
+Logo = "thumbnail.png"
 
 Description = "FORKED version of aephiex.advanced_ammo_storage_and_supply\n\n"\
     "[h1]Advanced Ammo Storage & Supply 2[/h1]\n\n"\
