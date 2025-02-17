@@ -15,7 +15,7 @@ Part : <./Data/ships/terran/base_part_terran.rules>/Part
 
 	Size = [1, 1]
 	MaxHealth = 3000
-	ExplosiveDamageAbsorption = 100%
+	ExplosiveDamageAbsorption = 50%
 	ExplosiveDamageResistance = 50%
 	Flammable = false
 	InitialPenetrationResistance = 4
@@ -138,18 +138,18 @@ Part : <./Data/ships/terran/base_part_terran.rules>/Part
             Type = ResourceConverter
             FromStorage = AmmoStorage
             ToStorage = NextChainProxy
-            FromQuantity = 1
-            ToQuantity = 1
-            Interval = 0.1
+            FromQuantity = 5
+            ToQuantity = 5
+            Interval = 0.025
         }
         ResourceConverter_Combined
         {
             Type = ResourceConverter
             FromStorage = AmmoStorage
             ToStorage = NextChainProxy_Combined
-            FromQuantity = 1
-            ToQuantity = 1
-            Interval = 0.1
+            FromQuantity = 5
+            ToQuantity = 5
+            Interval = 0.025
         }
 
         // Left Converters
@@ -158,18 +158,18 @@ Part : <./Data/ships/terran/base_part_terran.rules>/Part
 			Type = ResourceConverter
 			FromStorage = AmmoStorage
 			ToStorage = NextChainProxyLeft
-			FromQuantity = 1
-			ToQuantity = 1
-			Interval = 0.1
+			FromQuantity = 5
+			ToQuantity = 5
+			Interval = 0.025
 		}
         ResourceConverterLeft_Combined
 		{
 			Type = ResourceConverter
 			FromStorage = AmmoStorage
             ToStorage = NextChainProxyLeft_Combined
-			FromQuantity = 1
-			ToQuantity = 1
-			Interval = 0.1
+			FromQuantity = 5
+			ToQuantity = 5
+			Interval = 0.025
 		}
 
         // Right Converters
@@ -178,20 +178,91 @@ Part : <./Data/ships/terran/base_part_terran.rules>/Part
 			Type = ResourceConverter
 			FromStorage = AmmoStorage
 			ToStorage = NextChainProxyRight
-			FromQuantity = 1
-			ToQuantity = 1
-			Interval = 0.1
+			FromQuantity = 5
+			ToQuantity = 5
+			Interval = 0.025
         }
         ResourceConverterRight_Combined
         {
             Type = ResourceConverter
             FromStorage = AmmoStorage
             ToStorage = NextChainProxyRight_Combined
-            FromQuantity = 1
-            ToQuantity = 1
-            Interval = 0.1
+            FromQuantity = 5
+            ToQuantity = 5
+            Interval = 0.025
 		}
-		
+
+		//+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+		// Pull directly from ammo factories behind and to the sides
+
+		// Proxies to detect ammo factories in adjacent positions
+		FactoryProxy_Left
+		{
+			Type = ResourceStorageProxy
+			ResourceType = bullet
+			PartLocation = [-1, 0] // Checks left
+			PartCriteria
+			{
+				Category = provides_ammo
+			}
+			ComponentID = AmmoStorage
+		}
+
+		FactoryProxy_Right
+		{
+			Type = ResourceStorageProxy
+			ResourceType = bullet
+			PartLocation = [1, 0] // Checks right
+			PartCriteria
+			{
+				Category = provides_ammo
+			}
+			ComponentID = AmmoStorage
+		}
+
+		FactoryProxy_Back
+		{
+			Type = ResourceStorageProxy
+			ResourceType = bullet
+			PartLocation = [0, 1] // Checks behind
+			PartCriteria
+			{
+				Category = provides_ammo
+			}
+			ComponentID = AmmoStorage
+		}
+
+		// Pull ammo from nearby factories
+		ResourceConverter_Factory_Left
+		{
+			Type = ResourceConverter
+			FromStorage = FactoryProxy_Left
+			ToStorage = AmmoStorage
+			FromQuantity = 5
+			ToQuantity = 5
+			Interval = 0.025
+		}
+
+		ResourceConverter_Factory_Right
+		{
+			Type = ResourceConverter
+			FromStorage = FactoryProxy_Right
+			ToStorage = AmmoStorage
+			FromQuantity = 5
+			ToQuantity = 5
+			Interval = 0.025
+		}
+
+		ResourceConverter_Factory_Back
+		{
+			Type = ResourceConverter
+			FromStorage = FactoryProxy_Back
+			ToStorage = AmmoStorage
+			FromQuantity = 5
+			ToQuantity = 5
+			Interval = 0.025
+		}
+
 		// Now the whole thing again but for dpmbullet resource types 
 		// Uncomment below for Extended Tech Tree Mod support
 
@@ -290,18 +361,18 @@ Part : <./Data/ships/terran/base_part_terran.rules>/Part
 //			Type = ResourceConverter
 //			FromStorage = dpmAmmoStorage
 //			ToStorage = NextChainProxy_DPM
-//			FromQuantity = 1
-//			ToQuantity = 1
-//			Interval = 0.1
+//			FromQuantity = 5
+//			ToQuantity = 5
+//			Interval = 0.025
 //		}
 //		ResourceConverter_Combined_DPM
 //		{
 //			Type = ResourceConverter
 //			FromStorage = dpmAmmoStorage
 //			ToStorage = NextChainProxy_Combined_DPM
-//			FromQuantity = 1
-//			ToQuantity = 1
-//			Interval = 0.1
+//			FromQuantity = 5
+//			ToQuantity = 5
+//			Interval = 0.025
 //		}
 //
 //		// Left Converters
@@ -310,18 +381,18 @@ Part : <./Data/ships/terran/base_part_terran.rules>/Part
 //			Type = ResourceConverter
 //			FromStorage = dpmAmmoStorage
 //			ToStorage = NextChainProxyLeft_DPM
-//			FromQuantity = 1
-//			ToQuantity = 1
-//			Interval = 0.1
+//			FromQuantity = 5
+//			ToQuantity = 5
+//			Interval = 0.025
 //		}
 //		ResourceConverterLeft_Combined_DPM
 //		{
 //			Type = ResourceConverter
 //			FromStorage = dpmAmmoStorage
 //			ToStorage = NextChainProxyLeft_Combined_DPM
-//			FromQuantity = 1
-//			ToQuantity = 1
-//			Interval = 0.1
+//			FromQuantity = 5
+//			ToQuantity = 5
+//			Interval = 0.025
 //		}
 //
 //		// Right Converters
@@ -330,18 +401,18 @@ Part : <./Data/ships/terran/base_part_terran.rules>/Part
 //			Type = ResourceConverter
 //			FromStorage = dpmAmmoStorage
 //			ToStorage = NextChainProxyRight_DPM
-//			FromQuantity = 1
-//			ToQuantity = 1
-//			Interval = 0.1
+//			FromQuantity = 5
+//			ToQuantity = 5
+//			Interval = 0.025
 //		}
 //		ResourceConverterRight_Combined_DPM
 //		{
 //			Type = ResourceConverter
 //			FromStorage = dpmAmmoStorage
 //			ToStorage = NextChainProxyRight_Combined_DPM
-//			FromQuantity = 1
-//			ToQuantity = 1
-//			Interval = 0.1
+//			FromQuantity = 5
+//			ToQuantity = 5
+//			Interval = 0.025
 //		}
 
 		Graphics
