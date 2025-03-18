@@ -1,18 +1,18 @@
 
-ID = aephiex.advanced_ammo_storage_and_supply2
-Name = "Advanced Ammo Storage ＆ Supply 2"
-Version = 2.1.0
-CompatibleGameVersions = ["0.28.1"]
+ID = bwilliamson.advanced_ammo_storage_and_supply2_ett
+Name = "Advanced Ammo Storage ＆ Supply 2 Extended Tech Tree Version"
+Version = 2.1.1
+CompatibleGameVersions = ["0.28.1", "0.28.2"]
 ModifiesMultiplayer = true
 Author = "Bwilliamson55"
 Logo = "thumbnail.png"
 
 Description = "FORKED version of aephiex.advanced_ammo_storage_and_supply\n\n"\
 	"[url=https://steamcommunity.com/sharedfiles/filedetails/?id=2918609970&searchtext=advanced+ammo]Original Mod By Aephiex Here[/url]\n\n"\
-    "[h1]Advanced Ammo Storage & Supply 2[/h1]\n\n"\
+    "[h1]Advanced Ammo Storage & Supply 2 Extended Tech Tree Version[/h1]\n\n"\
     "[b]Version:[/b] 2.1.0\n"\
     "[b]Author:[/b] Bwilliamson55\n"\
-    "[b]Compatible Game Versions:[/b] 0.28.1\n"\
+    "[b]Compatible Game Versions:[/b] 0.28.1 - 0.28.2\n"\
     "[b][url=https://github.com/Bwilliamson55/advanced_ammo_supply_2]GitHub Repository[/url][/b]\n\n"\
     "[hr][/hr]"\
     "[h2]Overview[/h2]\n\n"\
