@@ -324,7 +324,6 @@ Part : <./Data/ships/terran/base_part_terran.rules>/Part
 		}
 
 		// Now the whole thing again but for dpmmissile_part_he resource types 
-		// Uncomment below for Extended Tech Tree mod support
 
 		HEMissileStorage_DPM
 		{
@@ -534,6 +533,75 @@ Part : <./Data/ships/terran/base_part_terran.rules>/Part
 			ToQuantity = 1
 			Interval = 0.1
 		}
+
+		// Proxies to detect factories in adjacent positions
+		FactoryProxy_Left_DPM
+		{
+			Type = ResourceStorageProxy
+			ResourceType = dpmmissile_part_he
+			PartLocation = [-1, 0] // Checks left
+			PartCriteria
+			{
+				Category = provides_missiles
+			}
+			ComponentID = dpmMissileStorage
+		}
+
+		FactoryProxy_Right_DPM
+		{
+			Type = ResourceStorageProxy
+			ResourceType = dpmmissile_part_he
+			PartLocation = [1, 0] // Checks right
+			PartCriteria
+			{
+				Category = provides_missiles
+			}
+			ComponentID = dpmMissileStorage
+		}
+
+		FactoryProxy_Back_DPM
+		{
+			Type = ResourceStorageProxy
+			ResourceType = dpmmissile_part_he
+			PartLocation = [0, 1] // Checks behind
+			PartCriteria
+			{
+				Category = provides_missiles
+			}
+			ComponentID = dpmMissileStorage
+		}
+
+		// Pull ammo from nearby factories
+		ResourceConverter_Factory_Left_DPM
+		{
+			Type = ResourceConverter
+			FromStorage = FactoryProxy_Left_DPM
+			ToStorage = HEMissileStorage_DPM
+			FromQuantity = 5
+			ToQuantity = 5
+			Interval = 0.025
+		}
+
+		ResourceConverter_Factory_Right_DPM
+		{
+			Type = ResourceConverter
+			FromStorage = FactoryProxy_Right_DPM
+			ToStorage = HEMissileStorage_DPM
+			FromQuantity = 5
+			ToQuantity = 5
+			Interval = 0.025
+		}
+
+		ResourceConverter_Factory_Back_DPM
+		{
+			Type = ResourceConverter
+			FromStorage = FactoryProxy_Back_DPM
+			ToStorage = HEMissileStorage_DPM
+			FromQuantity = 5
+			ToQuantity = 5
+			Interval = 0.025
+		}
+		//+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 
 		Graphics
 		{

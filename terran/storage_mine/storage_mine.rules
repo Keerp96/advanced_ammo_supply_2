@@ -264,7 +264,6 @@ Part : <./Data/ships/terran/base_part_terran.rules>/Part
 		}
 		
 		// Now the whole thing again but for dpmmine_part resource types 
-		// Uncomment below for Extended Tech Tree mod support
 
 		MineStorage_DPM
 		{
@@ -414,6 +413,75 @@ Part : <./Data/ships/terran/base_part_terran.rules>/Part
 			ToQuantity = 1
 			Interval = 0.1
 		}
+
+		// Proxies to detect factories in adjacent positions
+		FactoryProxy_Left_DPM
+		{
+			Type = ResourceStorageProxy
+			ResourceType = dpmmine_part
+			PartLocation = [-1, 0] // Checks left
+			PartCriteria
+			{
+				Category = provides_mines
+			}
+			ComponentID = MineStorage
+		}
+
+		FactoryProxy_Right_DPM
+		{
+			Type = ResourceStorageProxy
+			ResourceType = dpmmine_part
+			PartLocation = [1, 0] // Checks right
+			PartCriteria
+			{
+				Category = provides_mines
+			}
+			ComponentID = MineStorage
+		}
+
+		FactoryProxy_Back_DPM
+		{
+			Type = ResourceStorageProxy
+			ResourceType = dpmmine_part
+			PartLocation = [0, 1] // Checks behind
+			PartCriteria
+			{
+				Category = provides_mines
+			}
+			ComponentID = MineStorage
+		}
+
+		// Pull ammo from nearby factories
+		ResourceConverter_Factory_Left_DPM
+		{
+			Type = ResourceConverter
+			FromStorage = FactoryProxy_Left_DPM
+			ToStorage = MineStorage_DPM
+			FromQuantity = 5
+			ToQuantity = 5
+			Interval = 0.025
+		}
+
+		ResourceConverter_Factory_Right_DPM
+		{
+			Type = ResourceConverter
+			FromStorage = FactoryProxy_Right_DPM
+			ToStorage = MineStorage_DPM
+			FromQuantity = 5
+			ToQuantity = 5
+			Interval = 0.025
+		}
+
+		ResourceConverter_Factory_Back_DPM
+		{
+			Type = ResourceConverter
+			FromStorage = FactoryProxy_Back_DPM
+			ToStorage = MineStorage_DPM
+			FromQuantity = 5
+			ToQuantity = 5
+			Interval = 0.025
+		}
+		//+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 
 		Graphics
 		{
