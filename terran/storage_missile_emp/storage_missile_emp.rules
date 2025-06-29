@@ -196,89 +196,156 @@ Part : <./Data/ships/terran/base_part_terran.rules>/Part
 		}
 
 		// Now the whole thing again but for dpmmissile_part_emp resource types 
-		// Uncomment below for Extended Tech Tree mod support
 
-//		EMPMissileStorage_DPM
-//		{
-//			Type = TypedResourceGrid
-//			ResourceType = dpmmissile_part_emp
-//			GridRect = [0, 0, 1, 1]
-//			Layer = "doodads_low"
-//			SpriteInset = 8/64
-//		}
-//
-//		ResourceConsumer_DPM
-//		{
-//			Type = TypedResourceGridConsumer
-//			ResourceType = dpmmissile_part_emp
-//			Storage = EMPMissileStorage_DPM
-//			DefaultPriority = &/PRIORITIES/Storage_Supply
-//		}
-//
-//		// Forward Proxies
-//		NextChainProxy_DPM
-//		{
-//			Type = ResourceStorageProxy
-//			ResourceType = dpmmissile_part_emp
-//			PartLocation = [0, -1]
-//			PartCriteria
-//			{
-//				Category = uses_emps
-//			}
-//			ComponentID = EMPMissileStorage_DPM
-//		}
-//		NextChainProxy_Combined_DPM
-//		{
-//			Type = ResourceStorageProxy
-//			ResourceType = dpmmissile_part_emp
-//			PartLocation = [0, -1]
-//			PartCriteria
-//			{
-//				Category = uses_emps
-//			}
-//			ComponentID = CombinedMissileStorage
-//		}
-//		NextChainProxy_Standard_DPM
-//		{
-//			Type = ResourceStorageProxy
-//			ResourceType = dpmmissile_part_emp
-//			PartLocation = [0, -1]
-//			PartCriteria
-//			{
-//				Category = uses_emps
-//			}
-//			ComponentID = MissileStorage
-//		}
-//
-//		// Forward Converters
-//		ResourceConverter_DPM
-//		{
-//			Type = ResourceConverter
-//			FromStorage = EMPMissileStorage_DPM
-//			ToStorage = NextChainProxy_DPM
-//			FromQuantity = 1
-//			ToQuantity = 1
-//			Interval = 0.1
-//		}
-//		ResourceConverter_Combined_DPM
-//		{
-//			Type = ResourceConverter
-//			FromStorage = EMPMissileStorage_DPM
-//			ToStorage = NextChainProxy_Combined_DPM
-//			FromQuantity = 1
-//			ToQuantity = 1
-//			Interval = 0.1
-//		}
-//		ResourceConverter_Standard_DPM
-//		{
-//			Type = ResourceConverter
-//			FromStorage = EMPMissileStorage_DPM
-//			ToStorage = NextChainProxy_Standard_DPM
-//			FromQuantity = 1
-//			ToQuantity = 1
-//			Interval = 0.1
-//		}
-//
+		EMPMissileStorage_DPM
+		{
+			Type = TypedResourceGrid
+			ResourceType = dpmmissile_part_emp
+			GridRect = [0, 0, 1, 1]
+			Layer = "doodads_low"
+			SpriteInset = 8/64
+		}
+
+		ResourceConsumer_DPM
+		{
+			Type = TypedResourceGridConsumer
+			ResourceType = dpmmissile_part_emp
+			Storage = EMPMissileStorage_DPM
+			DefaultPriority = &/PRIORITIES/Storage_Supply
+		}
+
+		// Forward Proxies
+		NextChainProxy_DPM
+		{
+			Type = ResourceStorageProxy
+			ResourceType = dpmmissile_part_emp
+			PartLocation = [0, -1]
+			PartCriteria
+			{
+				Category = uses_emps
+			}
+			ComponentID = EMPMissileStorage_DPM
+		}
+		NextChainProxy_Combined_DPM
+		{
+			Type = ResourceStorageProxy
+			ResourceType = dpmmissile_part_emp
+			PartLocation = [0, -1]
+			PartCriteria
+			{
+				Category = uses_emps
+			}
+			ComponentID = CombinedMissileStorage
+		}
+		NextChainProxy_Standard_DPM
+		{
+			Type = ResourceStorageProxy
+			ResourceType = dpmmissile_part_emp
+			PartLocation = [0, -1]
+			PartCriteria
+			{
+				Category = uses_emps
+			}
+			ComponentID = MissileStorage
+		}
+
+		// Forward Converters
+		ResourceConverter_DPM
+		{
+			Type = ResourceConverter
+			FromStorage = EMPMissileStorage_DPM
+			ToStorage = NextChainProxy_DPM
+			FromQuantity = 1
+			ToQuantity = 1
+			Interval = 0.1
+		}
+		ResourceConverter_Combined_DPM
+		{
+			Type = ResourceConverter
+			FromStorage = EMPMissileStorage_DPM
+			ToStorage = NextChainProxy_Combined_DPM
+			FromQuantity = 1
+			ToQuantity = 1
+			Interval = 0.1
+		}
+		ResourceConverter_Standard_DPM
+		{
+			Type = ResourceConverter
+			FromStorage = EMPMissileStorage_DPM
+			ToStorage = NextChainProxy_Standard_DPM
+			FromQuantity = 1
+			ToQuantity = 1
+			Interval = 0.1
+		}
+
+		// Proxies to detect factories in adjacent positions
+		FactoryProxy_Left_DPM
+		{
+			Type = ResourceStorageProxy
+			ResourceType = dpmmissile_part_emp
+			PartLocation = [-1, 0] // Checks left
+			PartCriteria
+			{
+				Category = provides_emps
+			}
+			ComponentID = MissileStorage
+		}
+
+		FactoryProxy_Right_DPM
+		{
+			Type = ResourceStorageProxy
+			ResourceType = dpmmissile_part_emp
+			PartLocation = [1, 0] // Checks right
+			PartCriteria
+			{
+				Category = provides_emps
+			}
+			ComponentID = MissileStorage
+		}
+
+		FactoryProxy_Back_DPM
+		{
+			Type = ResourceStorageProxy
+			ResourceType = dpmmissile_part_emp
+			PartLocation = [0, 1] // Checks behind
+			PartCriteria
+			{
+				Category = provides_emps
+			}
+			ComponentID = MissileStorage
+		}
+
+		// Pull ammo from nearby factories
+		ResourceConverter_Factory_Left_DPM
+		{
+			Type = ResourceConverter
+			FromStorage = FactoryProxy_Left_DPM
+			ToStorage = EMPMissileStorage_DPM
+			FromQuantity = 5
+			ToQuantity = 5
+			Interval = 0.025
+		}
+
+		ResourceConverter_Factory_Right_DPM
+		{
+			Type = ResourceConverter
+			FromStorage = FactoryProxy_Right_DPM
+			ToStorage = EMPMissileStorage_DPM
+			FromQuantity = 5
+			ToQuantity = 5
+			Interval = 0.025
+		}
+
+		ResourceConverter_Factory_Back_DPM
+		{
+			Type = ResourceConverter
+			FromStorage = FactoryProxy_Back_DPM
+			ToStorage = EMPMissileStorage_DPM
+			FromQuantity = 5
+			ToQuantity = 5
+			Interval = 0.025
+		}
+		//+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 
 		Graphics
 		{
