@@ -176,69 +176,135 @@ Part : <./Data/ships/terran/base_part_terran.rules>/Part
 		}
 
 		// Now the whole thing again but for dpmbullet resource types 
-		// Uncomment below for Extended Tech Tree Mod support
+  		dpmAmmoStorage
+  		{
+  			Type = TypedResourceGrid
+  			ResourceType = dpmbullet
+  			GridRect = [0, 0, 1, 1]
+  			Layer = "doodads_low"
+  			SpriteInset = 8/64
+  		}
+  
+  		ResourceConsumer_DPM
+  		{
+  			Type = TypedResourceGridConsumer
+  			ResourceType = dpmbullet
+  			Storage = dpmAmmoStorage
+  			DefaultPriority = &/PRIORITIES/Storage_Supply
+  		}
+  
+  		// Forward Proxies
+  		NextChainProxy_DPM
+  		{
+  			Type = ResourceStorageProxy
+  			ResourceType = dpmbullet
+  			PartLocation = [0, -1]
+  			PartCriteria
+  			{
+  				Category = uses_ammo
+  			}
+  			ComponentID = dpmAmmoStorage
+  		}
+  		NextChainProxy_Combined_DPM
+  		{
+  			Type = ResourceStorageProxy
+  			ResourceType = dpmbullet
+  			PartLocation = [0, -1]
+  			PartCriteria
+  			{
+  				Category = uses_ammo
+  			}
+  			ComponentID = CombinedAmmoStorage
+  		}
+  
+  		// Forward Converters
+  		ResourceConverter_DPM
+  		{
+  			Type = ResourceConverter
+  			FromStorage = dpmAmmoStorage
+  			ToStorage = NextChainProxy_DPM
+  			FromQuantity = 5
+  			ToQuantity = 5
+  			Interval = 0.025
+  		}
+  		ResourceConverter_Combined_DPM
+  		{
+  			Type = ResourceConverter
+  			FromStorage = dpmAmmoStorage
+  			ToStorage = NextChainProxy_Combined_DPM
+  			FromQuantity = 5
+  			ToQuantity = 5
+  			Interval = 0.025
+  		}
+  
+		// Proxies to detect ammo factories in adjacent positions
+		FactoryProxy_Left_DPM
+		{
+			Type = ResourceStorageProxy
+			ResourceType = dpmbullet
+			PartLocation = [-1, 0] // Checks left
+			PartCriteria
+			{
+				Category = provides_ammo
+			}
+			ComponentID = dpmAmmoStorage
+		}
 
-//		dpmAmmoStorage
-//		{
-//			Type = TypedResourceGrid
-//			ResourceType = dpmbullet
-//			GridRect = [0, 0, 1, 1]
-//			Layer = "doodads_low"
-//			SpriteInset = 8/64
-//		}
-//
-//		ResourceConsumer_DPM
-//		{
-//			Type = TypedResourceGridConsumer
-//			ResourceType = dpmbullet
-//			Storage = dpmAmmoStorage
-//			DefaultPriority = &/PRIORITIES/Storage_Supply
-//		}
-//
-//		// Forward Proxies
-//		NextChainProxy_DPM
-//		{
-//			Type = ResourceStorageProxy
-//			ResourceType = dpmbullet
-//			PartLocation = [0, -1]
-//			PartCriteria
-//			{
-//				Category = uses_ammo
-//			}
-//			ComponentID = dpmAmmoStorage
-//		}
-//		NextChainProxy_Combined_DPM
-//		{
-//			Type = ResourceStorageProxy
-//			ResourceType = dpmbullet
-//			PartLocation = [0, -1]
-//			PartCriteria
-//			{
-//				Category = uses_ammo
-//			}
-//			ComponentID = CombinedAmmoStorage
-//		}
-//
-//		// Forward Converters
-//		ResourceConverter_DPM
-//		{
-//			Type = ResourceConverter
-//			FromStorage = dpmAmmoStorage
-//			ToStorage = NextChainProxy_DPM
-//			FromQuantity = 5
-//			ToQuantity = 5
-//			Interval = 0.025
-//		}
-//		ResourceConverter_Combined_DPM
-//		{
-//			Type = ResourceConverter
-//			FromStorage = dpmAmmoStorage
-//			ToStorage = NextChainProxy_Combined_DPM
-//			FromQuantity = 5
-//			ToQuantity = 5
-//			Interval = 0.025
-//		}
-//
+		FactoryProxy_Right_DPM
+		{
+			Type = ResourceStorageProxy
+			ResourceType = dpmbullet
+			PartLocation = [1, 0] // Checks right
+			PartCriteria
+			{
+				Category = provides_ammo
+			}
+			ComponentID = dpmAmmoStorage
+		}
+
+		FactoryProxy_Back_DPM
+		{
+			Type = ResourceStorageProxy
+			ResourceType = dpmbullet
+			PartLocation = [0, 1] // Checks behind
+			PartCriteria
+			{
+				Category = provides_ammo
+			}
+			ComponentID = dpmAmmoStorage
+		}
+
+		// Pull ammo from nearby factories
+		ResourceConverter_Factory_Left_DPM
+		{
+			Type = ResourceConverter
+			FromStorage = FactoryProxy_Left_DPM
+			ToStorage = dpmAmmoStorage
+			FromQuantity = 5
+			ToQuantity = 5
+			Interval = 0.025
+		}
+
+		ResourceConverter_Factory_Right_DPM
+		{
+			Type = ResourceConverter
+			FromStorage = FactoryProxy_Right_DPM
+			ToStorage = dpmAmmoStorage
+			FromQuantity = 5
+			ToQuantity = 5
+			Interval = 0.025
+		}
+
+		ResourceConverter_Factory_Back_DPM
+		{
+			Type = ResourceConverter
+			FromStorage = FactoryProxy_Back_DPM
+			ToStorage = dpmAmmoStorage
+			FromQuantity = 5
+			ToQuantity = 5
+			Interval = 0.025
+		}
+		//+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ 
 
 		Graphics
 		{
