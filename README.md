@@ -1,8 +1,6 @@
 # Advanced Ammo Storage & Supply 2
 
 **Forked from** `Bwilliamson55/advanced_ammo_supply_2` which forked from `aephiex.advanced_ammo_storage_and_supply` 
-## MOD COMPATIBLITY
-If you use Extended Tech Tree and want compatiblity - go into `/terran/storage_*/storage_*.rules` files and uncomment the necessary part.
 
 ## Keerp's Changes
 
