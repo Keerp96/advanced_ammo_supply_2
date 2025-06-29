@@ -1,49 +1,17 @@
 
-ID = bwilliamson.advanced_ammo_storage_and_supply2_ett
-Name = "Advanced Ammo Storage ＆ Supply 2 Extended Tech Tree Version"
-Version = 2.1.2
-CompatibleGameVersions = ["0.28.1", "0.28.2"]
+ID = keerp.advanced_ammo_storage_and_supply2_ett
+Name = "Advanced Ammo Storage ＆ Supply 2 Extended Tech Tree Version [Conveyor-Fixed]"
+Version = 2.1.3
+CompatibleGameVersions = ["0.28.1", "0.28.2", "0.29.0"]
 ModifiesMultiplayer = true
-Author = "Bwilliamson55"
+Author = "keerp"
 Logo = "thumbnail.png"
 
-Description = "FORKED version of aephiex.advanced_ammo_storage_and_supply\n\n"\
-	"[url=https://steamcommunity.com/sharedfiles/filedetails/?id=2918609970&searchtext=advanced+ammo]Original Mod By Aephiex Here[/url]\n\n"\
-    "[h1]Advanced Ammo Storage & Supply 2 Extended Tech Tree Version[/h1]\n\n"\
-    "[b]Version:[/b] 2.1.2\n"\
-    "[b]Author:[/b] Bwilliamson55\n"\
-    "[b]Compatible Game Versions:[/b] 0.28.1 - 0.28.2\n"\
-    "[b][url=https://github.com/Bwilliamson55/advanced_ammo_supply_2]GitHub Repository[/url][/b]\n\n"\
-    "[hr][/hr]"\
-    "[h2]Overview[/h2]\n\n"\
-    "This is a forked and updated version of Aephiex's original Advanced Ammo Storage & Supply mod.\n"\
-    "The original mod is no longer maintained, and this version expands its functionality with additional overrides, added compatibility patches, and improved ammo logistics through sideways movement.\n\n"\
-    "[hr][/hr]"\
-    "[h2]New Features and Improvements[/h2]\n\n"\
-	"[h3]Chaingun Ammo Support[/h3]\n"\
-	"- Chaingun and chaingun magazines now accept ammo transfer from belts\n"\
-	"[h3]Tech Tree Mod Ammo Support[/h3]\n"\
-	"- Tech Tree special ammo can share belts with regular ammo!\n"\
-	"[h3]Factory auto transfer[/h3]\n"\
-	"- Storage pulls from factories behind and to the sides\n"\
-    "[h3]Compatibility with Additional Mods[/h3]\n"\
-    "- [b]More Cannons Mod:[/b] EMP and Nuke cannons now supported\n"\
-    "- [b]Star Wars Mod:[/b] Supports mini-cluster, concussion, intruder, and hex missiles\n"\
-    "- [b]Missile Mods:[/b] Compatible with Galactic Allegiance Missile Silos, Standalone Missile Silos, Jani’s Shipyard, and Advanced Missile Launcher\n\n"\
-    "[h3]New Ammo Transfer System[/h3]\n"\
-    "- Ammunition can transfer [b]left, right, or forward[/b]\n"\
-    "[h3]Improved Storage Durability[/h3]\n"\
-    "- Armored storage bays provide additional protection\n"\
-    "- No roof access, maintaining balance and preventing excessive ammo stacking\n\n"\
-    "[hr][/hr]"\
-    "[h2]Technical Details[/h2]\n\n"\
-    "This version mostly replaces and beta-maxes mod overrides per component by pushing to custom and vanilla storages\n"\
-	"- For example, HE Missile storage will attempt to transfer to HEMissileStorage__Aephiex components, CombinedMissileStorage, and MissileStorages\n"\
-    "- [b]This means most mods now needs no special updates or tweaks to be compatible[/b]\n"\
-    "[hr][/hr]"\
-    "[h2]Feedback and Support[/h2]\n\n"\
-    "For bug reports, feature requests, or contributions, visit the [b][url=https://github.com/Bwilliamson55/advanced_ammo_supply_2]GitHub Repository[/url][/b].\n"\
-    "Discussion and updates will be shared there. Maybe.\n\n"
+Description =
+	"Advanced Ammo Storage & Supply 2 ETTM Compatible and Conveyor-Fixed\n\n"\
+	"Forked from Bwilliamson55/advanced_ammo_supply_2 which forked from aephiex.advanced_ammo_storage_and_supply\n\n"\
+	"Fixed Conveyor Belt-Like functionality\n\n"\
+	"Removed ability for storage to push to left and right, now only receives from sides via other storages or factories, resolving the "back and forth" juggling issue."
 
 StringsFolder = "strings"
 
