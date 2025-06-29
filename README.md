@@ -1,8 +1,15 @@
 # Advanced Ammo Storage & Supply 2
 
-**Forked from** `aephiex.advanced_ammo_storage_and_supply`
+**Forked from** `Bwilliamson55/advanced_ammo_supply_2` which forked from `aephiex.advanced_ammo_storage_and_supply` 
+## MOD COMPATIBLITY
+If you use Extended Tech Tree and want compatiblity - go into `/terran/storage_*/storage_*.rules` files and uncomment the necessary part.
 
-## Features & Changes
+## Keerp's Changes
+
+### Fixed Conveyor Belt-Like functionality
+- Removed ability for storage to push to left and right, now only receives from sides via other storages or factories, resolving the "back and forth" juggling issue.
+
+## Bwilliamson55's Features & Changes
 
 ### Expanded Ammo Support
 - Added storage for **EMP, Nuke, H.E. missile parts, and mines**.
@@ -67,7 +74,7 @@
 
 ## Credits
 - Original mod by **aephiex**.
-- Forked and expanded by **Bwilliamson55**.
+- Forked and expanded by **Bwilliamson55** and **keerp**.
 
 ---
 
