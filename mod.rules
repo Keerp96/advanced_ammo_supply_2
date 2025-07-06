@@ -1,6 +1,6 @@
 
-ID = keerp.advanced_ammo_storage_and_supply2_ett
-Name = "Advanced Ammo Storage ＆ Supply 2 Extended Tech Tree Version [Conveyor-Fixed]"
+ID = keerp.advanced_ammo_storage_and_supply2
+Name = "Advanced Ammo Storage ＆ Supply 2 Extended Tech Tree Version [Conveyor-Fixed] without ETTM support"
 Version = 2.1.3
 CompatibleGameVersions = ["0.28.1", "0.28.2", "0.29.0"]
 ModifiesMultiplayer = true
